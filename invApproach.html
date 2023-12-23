@@ -5,14 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Siqrs</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  align: center;
+  vertical-align=top;
+}
+</style>
 </head>
 <body width="100%" height="100%" vertical-align="middle" text-align="center">
-    <!-- Responsive navbar-->
+ <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container px-5">
             <a class="navbar-brand" href="#!"><img src="assets/images/siqrs.png" width="108px" height="23px"></a>
@@ -27,8 +70,46 @@
             </div>
         </div>
     </nav>
-    <div align="center"; vertical-align="top";>
-     <iframe align="center"; vertical-align="top"; width="100%"; height="790px"; src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwGarbcEBWEv24pL0nOb5n-b1IH3GmP36UfwEzw1V5kURHgQ3yMtr1mgqQc18vyCXN0nPtXfOx6c4H/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;chrome=false&amp;headers=false"></iframe>
-    </div>
+    
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Aggresive')" id="defaultOpen">Aggresive</button>
+  <button class="tablinks" onclick="openCity(event, 'Conservative')">Conservative</button>
+  <button class="tablinks" onclick="openCity(event, 'Retirement')">Retirement</button>
+</div>
+
+<div id="Aggresive" class="tabcontent">
+   <iframe align="center"; vertical-align="top"; width="100%"; height="790px"; src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwGarbcEBWEv24pL0nOb5n-b1IH3GmP36UfwEzw1V5kURHgQ3yMtr1mgqQc18vyCXN0nPtXfOx6c4H/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;chrome=false&amp;headers=false"></iframe>
+</div>
+
+<div id="Conservative" class="tabcontent">
+  <h3>Conservative</h3>
+  <p>Conservative is the capital of France.</p> 
+</div>
+
+<div id="Retirement" class="tabcontent">
+  <h3>Retirement</h3>
+  <p>Retirement is the capital of Japan.</p>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
 </body>
-</html>
+</html> 
